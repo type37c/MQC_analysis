@@ -1,0 +1,16 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.971494",
+  "shape": [
+    4,
+    5
+  ],
+  "columns": [
+    "bell_state",
+    "00",
+    "11",
+    "01",
+    "10"
+  ],
+  "name": "qiskit_bell_states",
+  "source": "public_datasets"
+}

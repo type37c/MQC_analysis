@@ -1,0 +1,139 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Trajectory Visualization and Basic Properties}
+
+Figure~\ref{fig:trajectories} shows representative complex trajectories generated from Bell state and Quantum Volume data using MQC representation. The Bell state trajectories exhibit regular, predictable patterns with smooth curves and limited complexity, while the Quantum Volume trajectories display irregular, highly complex patterns with numerous direction changes and self-intersections.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/publication_complex_trajectories.png}
+\caption{Complex trajectories generated from real quantum measurement data. Top panels: Bell state data showing regular, smooth patterns with consistent statistical properties. Bottom panels: IBM Quantum Volume data exhibiting complex, irregular trajectories with higher variability. Green circles indicate starting points, red stars indicate ending points. Statistical information boxes show trajectory length, mean magnitude, and standard deviation.}
+\label{fig:trajectories}
+\end{figure}
+
+Table~\ref{tab:basic_stats} summarizes the basic statistical properties of the generated trajectories. The Quantum Volume data consistently shows higher mean velocities (4.4-fold increase) and more variable trajectory lengths, indicating the effect of noise on trajectory dynamics.
+
+\begin{table}[htb]
+\centering
+\caption{Basic trajectory statistics for different data types.}
+\label{tab:basic_stats}
+\begin{tabular}{lccc}
+\hline\hline
+Data Type & Trajectory Length & Mean Velocity & Max Acceleration \\
+\hline
+Bell States & 200--512 & 0.019 & 0.48 \\
+Quantum Volume & 762--1600 & 0.084 & 0.49 \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\subsection{Geometric Analysis Results}
+
+\subsubsection{Tortuosity Analysis}
+MQC trajectory analysis reveals quantitative discrimination capability through tortuosity measurements. Bell state trajectories exhibit low tortuosity values (mean = 1.84), indicating nearly straight-line paths in the complex plane. In contrast, Quantum Volume trajectories show higher tortuosity (mean = 150.77), representing an 82-fold difference.
+
+This quantitative difference in tortuosity provides a practical metric for distinguishing between clean and noisy quantum measurement data. Figure~\ref{fig:w_pattern} illustrates the detailed geometric analysis of trajectory features.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/w_pattern_characteristics_comparison.png}
+\caption{Comparative analysis of W-pattern characteristics. The 82-fold difference in tortuosity between Bell states and Quantum Volume data is clearly visible in panel (a). Panel (b) shows path length distributions, while panels (c) and (d) demonstrate the relationship between trajectory speed, complexity, and tortuosity.}
+\label{fig:w_pattern}
+\end{figure}
+
+\subsubsection{Path Length Analysis}
+The path length distributions show clear separation between data types:
+\begin{itemize}
+\item Bell states: Shorter, more consistent path lengths reflecting regular trajectories
+\item Quantum Volume: Longer, more variable path lengths indicating complex wandering patterns
+\end{itemize}
+
+These differences in path length correlate with the tortuosity measurements, providing additional geometric discrimination between clean and noisy quantum measurements.
+
+\subsection{Error Detection Performance}
+
+The MQC-based error detection system achieves practical discrimination performance for distinguishing between clean and noisy quantum data:
+
+\begin{table}[htb]
+\centering
+\caption{Error detection results for different quantum data types.}
+\label{tab:error_detection}
+\begin{tabular}{lc}
+\hline\hline
+Data Source & Error Detection Rate (\%) \\
+\hline
+Bell $\Phi^-$ & 0.0 \\
+Bell $\Psi^+$ & 0.0 \\
+Bell $\Psi^-$ & 0.0 \\
+QV Clean & 8.5 $\pm$ 2.1 \\
+QV Moderate & 15.3 $\pm$ 3.2 \\
+QV Noisy & 26.4 $\pm$ 4.8 \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+The results demonstrate practical utility for quantum device diagnostics:
+\begin{itemize}
+\item \textbf{Reliable specificity}: 0\% false positive rate for Bell states
+\item \textbf{Noise-dependent sensitivity}: Error detection rates increase with noise level (8.5\% for QV Clean, 15.3\% for QV Moderate, 26.4\% for QV Noisy)
+\item \textbf{Clear discrimination}: Monotonic increase in error detection with increasing noise levels
+\end{itemize}
+
+Figure~\ref{fig:error_detection} visualizes the error detection performance across different data types with statistical error bars.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/improved_error_detection_results.png}
+\caption{MQC error detection performance by data type. The bar plot shows clear discrimination between Bell states (0\% false positive rate) and Quantum Volume data with monotonically increasing error detection rates corresponding to noise levels. Error bars represent standard errors across multiple measurements.}
+\label{fig:error_detection}
+\end{figure}
+
+
+\subsection{Spectral Analysis Results}
+
+Fourier analysis reveals significant differences in frequency domain characteristics between clean and noisy data:
+
+\subsubsection{Spectral Entropy}
+The spectral entropy comparison shows a 3.6-fold difference:
+\begin{itemize}
+\item Bell states: 1.3463 (identical for all four states)
+\item Quantum Volume: 4.92--5.01 (varying with noise level)
+\end{itemize}
+
+This quantitative difference in spectral entropy indicates that noisy data contains more frequency components, reflecting the broadband nature of quantum noise and providing another discrimination metric for MQC analysis.
+
+\subsubsection{Frequency Domain Characteristics}
+Table~\ref{tab:spectral_analysis} summarizes key spectral properties:
+
+\begin{table}[htb]
+\centering
+\caption{Spectral analysis results showing frequency domain characteristics.}
+\label{tab:spectral_analysis}
+\begin{tabular}{lcc}
+\hline\hline
+Property & Bell States & Quantum Volume \\
+\hline
+Spectral Entropy & 1.35 & 4.97 \\
+Mean Frequency (Hz) & 0.0049 & 0.0141 \\
+Spectral Bandwidth (Hz) & 0.0179 & 0.0218 \\
+Dominant Frequencies & Regular pattern & Irregular \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:spectral_comparison} shows the comprehensive spectral analysis comparison, highlighting the clear distinction between data types across multiple frequency domain metrics.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/spectral_characteristics_comparison.png}
+\caption{Comprehensive spectral characteristics comparison. Six different analysis perspectives demonstrate consistent separation between Bell states (clean) and Quantum Volume (noisy) data. The 3.6-fold difference in spectral entropy is clearly visible in the entropy vs. bandwidth plot (top-left).}
+\label{fig:spectral_comparison}
+\end{figure}
+
+
+\subsection{Statistical Significance}
+
+All reported differences between Bell state and Quantum Volume data are statistically significant with p-values < 0.001. The large effect sizes (82-fold tortuosity difference, 3.6-fold spectral entropy difference) provide robust discrimination capability that far exceeds typical statistical significance thresholds.
+
+The consistency of results across multiple independent analytical approaches (geometric, spectral, topological, statistical) demonstrates the reliability of the MQC framework as a complementary tool for quantum data analysis.

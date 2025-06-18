@@ -1,0 +1,17 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.979866",
+  "shape": [
+    24,
+    6
+  ],
+  "columns": [
+    "n_qubits",
+    "measurement_basis",
+    "noise_level",
+    "ideal_expectation",
+    "measured_expectation",
+    "fidelity"
+  ],
+  "name": "benchmark_process_tomography",
+  "source": "public_datasets"
+}

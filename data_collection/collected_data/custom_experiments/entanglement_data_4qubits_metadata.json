@@ -1,0 +1,16 @@
+{
+  "creation_date": "2025-06-16T22:51:00.465957",
+  "shape": [
+    2,
+    4
+  ],
+  "columns": [
+    "state_type",
+    "n_qubits",
+    "counts",
+    "shots"
+  ],
+  "category": "custom_experiments",
+  "name": "entanglement_data_4qubits",
+  "implementation": "NumPy_based"
+}

@@ -1,0 +1,34 @@
+# Core dependencies for CQT Theory Experiments and MQC Analysis
+numpy>=1.21.0
+matplotlib>=3.5.0
+scipy>=1.7.0
+pandas>=1.3.0
+
+# Jupyter notebook support
+jupyter>=1.0.0
+ipykernel>=6.0.0
+nbformat>=5.0.0
+
+# Scientific computing and visualization
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Data handling and analysis
+scikit-learn>=1.0.0
+h5py>=3.0.0
+
+# LaTeX support for publications
+texttable>=1.6.0
+
+# Optional: Enhanced computing libraries
+# numba>=0.56.0  # For numerical acceleration
+# sympy>=1.9.0   # For symbolic mathematics
+
+# Development and testing
+pytest>=6.0.0
+pytest-cov>=3.0.0
+
+# Code quality
+black>=22.0.0
+flake8>=4.0.0
+mypy>=0.910

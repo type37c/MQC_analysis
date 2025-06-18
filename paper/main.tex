@@ -1,0 +1,44 @@
+\documentclass[aps,pra,twocolumn,showpacs,preprintnumbers,amsmath,amssymb]{revtex4-1}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{subcaption}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{Measurement Quality Complex (MQC) Analysis: A Visual Tool for NISQ-Era Quantum Computing}
+
+\author{Keisuke Otani}
+\email{wacon316@gmail.com}
+
+\date{\today}
+
+\begin{abstract}
+We present a practical visualization and analysis tool for quantum measurement data using Measurement Quality Complex (MQC) representation. Our method achieves noise-dependent error detection rates ranging from 8.5\% to 26.4\% on IBM Quantum Volume experiments while maintaining computational efficiency suitable for real-time monitoring. The MQC approach represents measurement sequences as complex numbers $z = d + ui$ where $d$ is directional bias and $u$ is uncertainty, providing intuitive visualization of quantum device performance. Testing on Bell states and IBM Quantum Volume data demonstrates quantitative discrimination with 82-fold tortuosity difference and 3.6-fold spectral entropy variation between clean and noisy measurements. This tool offers NISQ-era quantum computing practitioners a complementary diagnostic method for hardware characterization and real-time quality assessment.
+\end{abstract}
+
+\keywords{NISQ computing, quantum diagnostics, measurement analysis, real-time monitoring, quantum hardware characterization}
+
+\maketitle
+
+\input{sections/introduction}
+\input{sections/theory}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+\begin{acknowledgments}
+We acknowledge the assistance of Claude (Anthropic's AI assistant) in developing the computational framework for complex quantum trajectory analysis, particularly in data processing, statistical analysis, and visualization implementation. We thank the IBM Quantum team for providing access to quantum hardware data through the Quantum Volume experiments.
+\end{acknowledgments}
+
+\bibliographystyle{apsrev4-1}
+\bibliography{references}
+
+\end{document}

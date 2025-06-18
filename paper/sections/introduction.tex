@@ -1,0 +1,25 @@
+\section{Introduction}
+
+NISQ-era quantum devices face significant challenges from noise and decoherence that require real-time monitoring and diagnostic tools~\cite{preskill2018quantum}. Traditional quantum error analysis relies on computationally intensive methods like quantum process tomography or provides limited information like randomized benchmarking~\cite{nielsen2010quantum}. There is a critical need for practical tools that can provide visual, intuitive feedback about quantum device performance while maintaining computational efficiency suitable for real-time applications.
+
+Current diagnostic approaches have significant limitations: quantum process tomography scales exponentially with system size, making it impractical for real-time monitoring, while randomized benchmarking provides only averaged fidelity information without detailed error characterization~\cite{arute2019quantum,zhong2020quantum}. Hardware engineers and quantum algorithm developers need complementary tools that can quickly identify performance degradation and provide actionable insights.
+
+We introduce Measurement Quality Complex (MQC) representation, a practical analysis tool for quantum measurement data. MQC numbers are defined as:
+\begin{equation}
+z = d + ui
+\end{equation}
+where $d$ represents the directional bias of measurements and $u$ represents the uncertainty.
+
+\textbf{Important}: These complex numbers are \emph{not} quantum amplitudes. They represent statistical properties of measurement sequences, not quantum states. MQC analysis transforms binary measurement outcomes into visual trajectories in the complex plane, enabling intuitive understanding of quantum device behavior patterns.
+
+Our contributions include:
+\begin{itemize}
+\item A computationally efficient visualization tool for NISQ device characterization
+\item Real-time capable error detection with quantitative performance metrics
+\item Intuitive visual representation complementing existing diagnostic methods
+\item Validation on real quantum hardware data with measurable discrimination capability
+\end{itemize}
+
+We validate MQC analysis using real quantum data from Bell state measurements and IBM Quantum Volume experiments. Our results demonstrate quantitative discrimination capability with 82-fold difference in trajectory tortuosity and 3.6-fold difference in spectral entropy between clean and noisy measurements, achieving practical error detection suitable for real-time monitoring applications.
+
+The remainder of this paper presents the MQC representation framework, validation methodology using real quantum data, quantitative performance results, and discussion of practical applications for NISQ-era quantum computing diagnostics.

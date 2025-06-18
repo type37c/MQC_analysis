@@ -1,0 +1,16 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.978727",
+  "shape": [
+    32,
+    5
+  ],
+  "columns": [
+    "gate_fidelity",
+    "sequence_length",
+    "average_fidelity",
+    "error_rate",
+    "error_per_gate"
+  ],
+  "name": "benchmark_randomized_benchmarking",
+  "source": "public_datasets"
+}

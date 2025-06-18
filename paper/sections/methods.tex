@@ -1,0 +1,130 @@
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Experimental Data}
+
+Our analysis employs two distinct categories of quantum measurement data to validate MQC analysis as a practical diagnostic tool:
+
+\subsubsection{Bell State Data}
+We utilize measurement data from four maximally entangled Bell states:
+\begin{align}
+|\Phi^+\rangle &= \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) \\
+|\Phi^-\rangle &= \frac{1}{\sqrt{2}}(|00\rangle - |11\rangle) \\
+|\Psi^+\rangle &= \frac{1}{\sqrt{2}}(|01\rangle + |10\rangle) \\
+|\Psi^-\rangle &= \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)
+\end{align}
+
+Each Bell state was measured 8,192 times, providing high-statistics data for analysis. These states serve as clean reference data due to their theoretical purity and well-characterized properties.
+
+\subsubsection{IBM Quantum Volume Data}
+We analyze real experimental data from IBM Quantum Volume (QV) experiments, which represent realistic noisy quantum computations. The dataset includes:
+\begin{itemize}
+\item Standard QV data: 70 experimental trials
+\item Moderate noise QV data: 100 trials with intermediate noise levels  
+\item High noise QV data: Variable trials with elevated noise conditions
+\end{itemize}
+
+These datasets provide realistic examples of quantum computations affected by various noise sources including decoherence, gate errors, and measurement errors.
+
+\subsection{Trajectory Generation}
+
+For each dataset, we generate complex trajectories using the MQC representation described in Section~\ref{sec:theory}. The specific implementation details are:
+
+\subsubsection{Preprocessing}
+\begin{enumerate}
+\item Raw measurement counts are converted to binary sequences
+\item Sequences are subsampled to ensure computational efficiency while preserving statistical properties
+\item Window sizes are chosen adaptively based on sequence length: $w = \min(50, N/10)$
+\end{enumerate}
+
+\subsubsection{Complex Mapping}
+Each binary measurement sequence $\{m_i\}$ is transformed into a complex trajectory $\{z_i\}$ using Equations~\ref{eq:direction} and \ref{eq:uncertainty}, with physical constraints applied according to Equations~\ref{eq:constraint_real} and \ref{eq:constraint_imag}.
+
+\subsection{Analysis Pipeline}
+
+Our comprehensive analysis pipeline consists of four main components:
+
+\subsubsection{Geometric Analysis}
+For each trajectory, we compute:
+\begin{itemize}
+\item Instantaneous properties: velocity (Eq.~\ref{eq:velocity}), acceleration (Eq.~\ref{eq:acceleration}), curvature (Eq.~\ref{eq:curvature})
+\item Global properties: tortuosity (Eq.~\ref{eq:tortuosity}), total path length, trajectory area
+\item Topological properties: winding number (Eq.~\ref{eq:winding}), self-intersection count
+\end{itemize}
+
+\subsubsection{W-Pattern Feature Extraction}
+We implement specialized algorithms to detect and quantify W-shaped patterns in trajectories:
+\begin{itemize}
+\item Fractal dimension estimation using box-counting methods
+\item Detection of characteristic turning points and inflection points
+\item Quantification of pattern regularity and symmetry
+\end{itemize}
+
+\subsubsection{Spectral Analysis}
+Frequency domain analysis is performed using:
+\begin{itemize}
+\item Fast Fourier Transform (FFT) of complex trajectories
+\item Power spectral density computation for real and imaginary components
+\item Spectral entropy calculation (Eq.~\ref{eq:spectral_entropy})
+\item Time-frequency analysis using spectrograms
+\end{itemize}
+
+\subsubsection{Statistical Comparison}
+We implement robust statistical methods for comparing trajectory properties:
+\begin{itemize}
+\item Kolmogorov-Smirnov tests for distribution comparisons
+\item Bootstrap resampling for confidence interval estimation
+\item Multi-dimensional scaling for trajectory clustering
+\end{itemize}
+
+\subsection{Error Detection Implementation}
+
+The error detection system operates in two phases, incorporating specialized detection algorithms for different error types based on trajectory pattern analysis:
+
+\subsubsection{Training Phase}
+\begin{enumerate}
+\item Reference statistics are computed from clean Bell state trajectories
+\item Threshold values are determined using 3-sigma criteria on reference distributions
+\item Feature weights $w_p$ in Equation~\ref{eq:error_metric} are optimized using cross-validation
+\end{enumerate}
+
+\subsubsection{Detection Phase}
+\begin{enumerate}
+\item Test trajectories are processed through the same analysis pipeline
+\item Error metrics are computed using Equation~\ref{eq:error_metric}
+\item Binary classification is performed based on threshold comparison
+\item Confidence scores are assigned based on the magnitude of deviation from reference
+\end{enumerate}
+
+\subsubsection{Specialized Error Type Detection}
+Building on trajectory pattern recognition, we implement targeted detection algorithms:
+
+\begin{itemize}
+\item \textbf{Bit-flip Error Detection}: Monitoring trajectory curvature spikes and sudden direction changes
+\item \textbf{Phase Noise Detection}: Analyzing trajectory wandering patterns and phase drift
+\item \textbf{Amplitude Decay Detection}: Tracking systematic drift toward the complex plane origin
+\item \textbf{Coherence Loss Detection}: Measuring trajectory regularity and pattern degradation
+\end{itemize}
+
+Each detection algorithm uses error-specific thresholds optimized for maximum sensitivity while maintaining low false positive rates.
+
+\subsection{Computational Implementation}
+
+All analyses are implemented in Python 3.8+ using:
+\begin{itemize}
+\item NumPy and SciPy for numerical computations
+\item Matplotlib for visualization
+\item Custom algorithms for MQC-specific calculations
+\end{itemize}
+
+The complete analysis pipeline processes datasets containing thousands of measurements within minutes on standard desktop hardware, making it suitable for real-time quantum device monitoring applications.
+
+\subsection{Validation Methodology}
+
+To ensure robustness of our results, we employ:
+\begin{itemize}
+\item Cross-validation using different subsets of data
+\item Sensitivity analysis for parameter variations
+\item Comparison with traditional quantum state analysis methods
+\item Statistical significance testing for all reported differences
+\end{itemize}

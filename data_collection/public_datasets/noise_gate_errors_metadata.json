@@ -1,0 +1,16 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.989508",
+  "shape": [
+    24,
+    5
+  ],
+  "columns": [
+    "gate_type",
+    "target_fidelity",
+    "measured_fidelity",
+    "error_rate",
+    "is_two_qubit"
+  ],
+  "name": "noise_gate_errors",
+  "source": "public_datasets"
+}

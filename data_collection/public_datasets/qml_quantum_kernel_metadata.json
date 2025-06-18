@@ -1,0 +1,17 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.984647",
+  "shape": [
+    48,
+    6
+  ],
+  "columns": [
+    "kernel_type",
+    "gamma",
+    "n_samples",
+    "accuracy",
+    "training_time",
+    "n_features"
+  ],
+  "name": "qml_quantum_kernel",
+  "source": "public_datasets"
+}

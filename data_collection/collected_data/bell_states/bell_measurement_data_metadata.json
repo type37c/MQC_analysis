@@ -1,0 +1,16 @@
+{
+  "creation_date": "2025-06-16T22:51:00.451385",
+  "shape": [
+    4,
+    4
+  ],
+  "columns": [
+    "state",
+    "counts",
+    "shots",
+    "timestamp"
+  ],
+  "category": "bell_states",
+  "name": "bell_measurement_data",
+  "implementation": "NumPy_based"
+}

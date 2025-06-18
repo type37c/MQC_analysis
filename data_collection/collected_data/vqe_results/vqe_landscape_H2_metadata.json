@@ -1,0 +1,16 @@
+{
+  "creation_date": "2025-06-16T22:51:00.486748",
+  "shape": [
+    400,
+    4
+  ],
+  "columns": [
+    "theta",
+    "phi",
+    "energy",
+    "hamiltonian"
+  ],
+  "category": "vqe_results",
+  "name": "vqe_landscape_H2",
+  "implementation": "NumPy_based"
+}

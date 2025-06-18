@@ -1,0 +1,15 @@
+{
+  "creation_date": "2025-06-16T22:51:00.479678",
+  "shape": [
+    5,
+    3
+  ],
+  "columns": [
+    "noise_level",
+    "counts",
+    "fidelity"
+  ],
+  "category": "error_characterization",
+  "name": "noise_sweep_data",
+  "implementation": "NumPy_based"
+}

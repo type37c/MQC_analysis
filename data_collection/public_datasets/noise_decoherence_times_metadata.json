@@ -1,0 +1,16 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.988730",
+  "shape": [
+    12,
+    5
+  ],
+  "columns": [
+    "qubit_type",
+    "temperature",
+    "t1_time",
+    "t2_time",
+    "dephasing_time"
+  ],
+  "name": "noise_decoherence_times",
+  "source": "public_datasets"
+}

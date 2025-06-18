@@ -1,0 +1,151 @@
+\section{Measurement Quality Complex Representation}
+\label{sec:theory}
+
+\subsection{Definition and Motivation}
+
+We define MQC not as a fundamental physical quantity, but as a useful statistical representation for visualizing quantum measurement quality. For a sequence of quantum measurements yielding outcomes $m_i \in \{0, 1\}$, we construct complex numbers:
+
+\begin{equation}
+z_i = d_i + i u_i
+\label{eq:cqt_basic}
+\end{equation}
+
+where $d_i$ represents the directional bias and $u_i$ represents the measurement uncertainty within a local window.
+
+\subsection{Distinction from Quantum Amplitudes}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lll}
+\hline
+Property & Quantum Amplitude & MQC \\
+\hline
+Physical meaning & Probability amplitude & Statistical indicator \\
+Normalization & $\sum|\psi|^2 = 1$ & Not required \\
+Interference & Yes & No \\
+\hline
+\end{tabular}
+\caption{Fundamental differences between quantum amplitudes and MQC numbers.}
+\end{table}
+
+MQC numbers represent patterns in measurement data, not quantum mechanical amplitudes. This distinction is crucial for proper interpretation of results.
+
+\subsection{Direction and Uncertainty Mapping}
+
+The directional component $d_i$ is computed as a running correlation measure:
+
+\begin{equation}
+d_i = \frac{1}{w} \sum_{j=i-w+1}^{i} \frac{2m_j - 1}{\sqrt{1 + \sigma^2_j}}
+\label{eq:direction}
+\end{equation}
+
+where $w$ is the window size for local averaging and $\sigma^2_j$ is the local variance of measurements.
+
+The uncertainty component $u_i$ captures the unpredictability in the measurement sequence:
+
+\begin{equation}
+u_i = \sqrt{\frac{1}{w-1} \sum_{j=i-w+1}^{i} (m_j - \bar{m}_i)^2}
+\label{eq:uncertainty}
+\end{equation}
+
+where $\bar{m}_i$ is the local mean of measurements within the window.
+
+\subsection{Physical Constraints}
+
+To ensure physical consistency, we enforce the constraints:
+\begin{align}
+d_i &\in [-1, +1] \label{eq:constraint_real}\\
+u_i &\in [0, 1] \label{eq:constraint_imag}
+\end{align}
+
+These constraints ensure that the real part represents a normalized correlation measure and the imaginary part represents a normalized uncertainty measure.
+
+\subsection{Trajectory Construction}
+
+A sequence of $N$ measurements generates a complex trajectory:
+
+\begin{equation}
+\mathcal{T} = \{z_1, z_2, \ldots, z_N\}
+\label{eq:trajectory}
+\end{equation}
+
+This trajectory can be analyzed using various mathematical tools:
+
+\subsubsection{Geometric Properties}
+
+The instantaneous velocity of the trajectory is given by:
+\begin{equation}
+v_i = |z_{i+1} - z_i|
+\label{eq:velocity}
+\end{equation}
+
+The acceleration is:
+\begin{equation}
+a_i = |v_{i+1} - v_i|
+\label{eq:acceleration}
+\end{equation}
+
+The curvature at point $i$ is computed as:
+\begin{equation}
+\kappa_i = \frac{|\text{Im}[(z_{i+1} - z_i)\overline{(z_i - z_{i-1})}]|}{|z_{i+1} - z_i|^2 |z_i - z_{i-1}|}
+\label{eq:curvature}
+\end{equation}
+
+\subsubsection{Topological Measures}
+
+The tortuosity of a trajectory quantifies its complexity:
+\begin{equation}
+\tau = \frac{\sum_{i=1}^{N-1} |z_{i+1} - z_i|}{|z_N - z_1|}
+\label{eq:tortuosity}
+\end{equation}
+
+The winding number captures the trajectory's rotational behavior:
+\begin{equation}
+W = \frac{1}{2\pi} \sum_{i=1}^{N-1} \arg\left(\frac{z_{i+1} - z_c}{z_i - z_c}\right)
+\label{eq:winding}
+\end{equation}
+
+where $z_c$ is the trajectory centroid.
+
+\subsection{Spectral Analysis}
+
+The Fourier transform of the complex trajectory provides frequency domain insights:
+
+\begin{equation}
+\tilde{Z}(\omega) = \int_{-\infty}^{\infty} z(t) e^{-i\omega t} dt
+\label{eq:fourier}
+\end{equation}
+
+The spectral entropy quantifies the frequency domain complexity:
+
+\begin{equation}
+S = -\sum_k P_k \log_2 P_k
+\label{eq:spectral_entropy}
+\end{equation}
+
+where $P_k = |\tilde{Z}(\omega_k)|^2 / \sum_j |\tilde{Z}(\omega_j)|^2$ is the normalized power spectral density.
+
+\subsection{Important Distinction: MQC vs. Quantum Amplitudes}
+
+It is crucial to emphasize that MQC numbers are \emph{not} quantum mechanical amplitudes. While both are complex numbers, they serve fundamentally different purposes:
+
+\begin{itemize}
+\item \textbf{Quantum amplitudes}: Describe the probability amplitudes of quantum states, follow superposition principles, and exhibit quantum interference
+\item \textbf{MQC numbers}: Statistical indicators derived from measurement sequences, providing diagnostic information about measurement quality patterns
+\end{itemize}
+
+This distinction is essential for proper interpretation of MQC analysis results as practical diagnostic tools rather than fundamental quantum mechanical quantities.
+
+\subsection{Error Detection Framework}
+
+MQC-based error detection compares trajectory statistics against reference distributions. For a test trajectory $\mathcal{T}_{\text{test}}$ and reference trajectory $\mathcal{T}_{\text{ref}}$, we compute:
+
+\begin{equation}
+E = \sqrt{\sum_{p} w_p \left(\frac{S_p^{\text{test}} - S_p^{\text{ref}}}{S_p^{\text{ref}}}\right)^2}
+\label{eq:error_metric}
+\end{equation}
+
+where $S_p$ represents various statistical measures (mean, variance, tortuosity, spectral entropy) and $w_p$ are weighting factors.
+
+An error is detected when $E$ exceeds a threshold $E_{\text{th}}$ determined from clean reference data.

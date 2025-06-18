@@ -1,0 +1,16 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.977482",
+  "shape": [
+    25,
+    5
+  ],
+  "columns": [
+    "n_qubits",
+    "depth",
+    "success_rate",
+    "heavy_output_probability",
+    "quantum_volume"
+  ],
+  "name": "benchmark_quantum_volume",
+  "source": "public_datasets"
+}

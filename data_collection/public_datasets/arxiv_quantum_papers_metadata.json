@@ -1,0 +1,17 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.968452",
+  "shape": [
+    20,
+    6
+  ],
+  "columns": [
+    "id",
+    "title",
+    "authors",
+    "abstract",
+    "category",
+    "submitted"
+  ],
+  "name": "arxiv_quantum_papers",
+  "source": "public_datasets"
+}

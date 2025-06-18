@@ -1,0 +1,17 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.986027",
+  "shape": [
+    60,
+    6
+  ],
+  "columns": [
+    "n_layers",
+    "learning_rate",
+    "n_qubits",
+    "final_accuracy",
+    "convergence_epoch",
+    "parameter_count"
+  ],
+  "name": "qml_vqc_benchmarks",
+  "source": "public_datasets"
+}

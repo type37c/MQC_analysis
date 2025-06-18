@@ -1,0 +1,17 @@
+{
+  "creation_date": "2025-06-16T22:51:00.457146",
+  "shape": [
+    50,
+    5
+  ],
+  "columns": [
+    "angle",
+    "counts_0",
+    "counts_1",
+    "probability_1",
+    "theoretical_prob_1"
+  ],
+  "category": "custom_experiments",
+  "name": "rotation_sweep_data",
+  "implementation": "NumPy_based"
+}

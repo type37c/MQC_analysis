@@ -1,0 +1,17 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.987157",
+  "shape": [
+    60,
+    6
+  ],
+  "columns": [
+    "problem_size",
+    "n_layers",
+    "optimizer",
+    "approximation_ratio",
+    "evaluation_count",
+    "success_probability"
+  ],
+  "name": "qml_qaoa_benchmarks",
+  "source": "public_datasets"
+}

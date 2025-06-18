@@ -1,0 +1,15 @@
+{
+  "fetch_date": "2025-06-16T22:51:02.973552",
+  "shape": [
+    28,
+    4
+  ],
+  "columns": [
+    "n_qubits",
+    "state",
+    "count",
+    "is_target"
+  ],
+  "name": "qiskit_grover_benchmarks",
+  "source": "public_datasets"
+}
