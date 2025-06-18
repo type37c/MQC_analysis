@@ -193,7 +193,7 @@ If you use this work in your research, please cite:
   title={Measurement Quality Complex (MQC) Analysis: A Visual Tool for NISQ-Era Quantum Computing},
   author={Otani, Keisuke},
   year={2024},
-  note={Available at: https://github.com/[username]/CQT_experiments}
+  note={Available at: https://github.com/type37c/MQC_analysis}
 }
 ```
 
