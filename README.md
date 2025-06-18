@@ -32,22 +32,47 @@ Our analysis of real quantum data demonstrates:
 ## 🏗️ Repository Structure
 
 ```
+MQC_analysis/
+├── README.md                     # Project overview and usage guide
+├── LICENSE                       # MIT License
+├── requirements.txt              # Python dependencies
+├── .gitignore                    # Git ignore rules
 ├── src/                          # Core implementation
-│   ├── cqt_tracker.py           # Original CQT implementation (v1)
+│   ├── __init__.py              # Package initialization
+│   ├── cqt_tracker_v3.py        # Main optimized implementation (recommended)
 │   ├── cqt_tracker_v2.py        # Improved version with physical constraints
-│   ├── cqt_tracker_v3.py        # Optimized version with realistic thresholds
+│   ├── cqt_tracker.py           # Original implementation (reference)
 │   ├── noise_models.py          # Noise simulation utilities
-│   └── complex_cqt_operations.py # Complex mathematical operations
+│   ├── complex_cqt_operations.py # Complex mathematical operations
+│   └── complex_error_detection.py # Error detection algorithms
+├── examples/                     # Easy-to-run demo scripts
+│   ├── basic_cqt_demo.py        # Quick start demonstration
+│   ├── real_data_demo.py        # Real quantum data analysis
+│   └── README.md                # Usage instructions for examples
+├── experiments/                  # Research and validation scripts
+│   ├── real_data_complex_cqt_analysis.py # Main real data analysis
+│   ├── complex_error_detection_real_data.py # Error detection validation
+│   ├── fourier_spectral_analysis.py # Spectral analysis tools
+│   ├── w_pattern_detailed_analysis.py # W-pattern feature extraction
+│   ├── noise_validation.py      # Noise model validation
+│   └── test_v3_detection.py     # v3 detection testing
 ├── notebooks/                    # Jupyter analysis notebooks
-│   ├── 01_cqt_basic_experiments.ipynb
-│   ├── 03_cqt_real_data_analysis.ipynb
-│   └── 05_real_data_complex_cqt_analysis_report.ipynb
-├── experiments/                  # Validation experiments
-│   ├── noise_validation.py
-│   └── test_v3_detection.py
+│   ├── 01_cqt_basic_experiments.ipynb # Basic experiments and theory
+│   ├── 02_cqt_v1_v2_comparison.ipynb # Version comparison analysis
+│   ├── 03_cqt_real_data_analysis.ipynb # Real quantum data analysis
+│   ├── 04_complex_cqt_deep_analysis.ipynb # Deep mathematical analysis
+│   └── 05_real_data_complex_cqt_analysis_report.ipynb # Comprehensive report
+├── paper/                        # Scientific publication (LaTeX)
+│   ├── main.tex                 # Main paper (English)
+│   ├── figures/                 # Publication figures
+│   └── sections/                # Paper sections
+├── paper_japanese/               # Japanese version of paper
 ├── data_collection/             # Real quantum data collection tools
-├── paper/                       # Scientific publication (LaTeX)
-└── docs/                        # Documentation and technical guides
+├── docs/                        # Technical documentation
+├── results/                     # Analysis results and outputs
+│   ├── data/                    # Result data files (CSV, JSON)
+│   └── plots/                   # Generated plots and figures
+└── venv/                        # Virtual environment (ignored by git)
 ```
 
 ## 🚀 Quick Start
@@ -61,6 +86,10 @@ pip install numpy matplotlib scipy pandas jupyter
 ### Basic Usage
 
 ```python
+# Option 1: Using the package import
+from src import MQCTracker
+
+# Option 2: Direct import (recommended)
 from src.cqt_tracker_v3 import OptimizedCQTTracker
 
 # Initialize tracker
@@ -87,14 +116,16 @@ print(f"Error Detection: {error_detected}")
 ### Real Data Analysis
 
 ```bash
-# Analyze real quantum data
-python real_data_complex_cqt_analysis.py
+# Run easy demo scripts
+cd examples
+python basic_cqt_demo.py          # Quick start demonstration
+python real_data_demo.py          # Real quantum data analysis
 
-# Run comprehensive feature extraction
-python w_pattern_detailed_analysis.py
-
-# Perform error detection validation
-python complex_error_detection_real_data.py
+# Run research experiments
+cd ../experiments
+python real_data_complex_cqt_analysis.py     # Main real data analysis
+python w_pattern_detailed_analysis.py        # W-pattern feature extraction
+python complex_error_detection_real_data.py  # Error detection validation
 ```
 
 ## 📈 Key Results
